@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+@import "tailwindcss";
+
+* {
+  font-family: "Outfit", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #374151;
+  /* gray-700 */
+  --text-primary: #1f2937;
+  /* gray-800 */
+  --text-muted: #6b7280;
+  /* gray-500 */
+  --border-color: #e5e7eb;
+  /* gray-200 */
+  --primary-color: #2563eb;
+  /* blue-600 */
+  --card-bg: #ffffff;
+  --hero-bg: linear-gradient(to right, #eff6ff, #e0e7ff);
+  /* blue-50 to indigo-100 */
+  --input-bg: #ffffff;
+
+  /* Badge Colors Light */
+  --badge-blue-bg: #dbeafe;
+  /* blue-100 */
+  --badge-blue-text: #1e40af;
+  /* blue-800 */
+  --badge-green-bg: #dcfce7;
+  /* green-100 */
+  --badge-green-text: #166534;
+  /* green-800 */
+  --badge-purple-bg: #f3e8ff;
+  /* purple-100 */
+  --badge-purple-text: #6b21a8;
+  /* purple-800 */
+  --badge-teal-bg: #ccfbf1;
+  /* teal-100 */
+  --badge-teal-text: #115e59;
+  /* teal-800 */
+  --badge-orange-bg: #ffedd5;
+  /* orange-100 */
+  --badge-orange-text: #9a3412;
+  /* orange-800 */
+}
+
+/* High Contrast Theme */
+.theme-high-contrast {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --text-primary: #000000;
+  --text-muted: #000000;
+  --border-color: #000000;
+  --primary-color: #0000ee;
+  --card-bg: #ffffff;
+  --hero-bg: #ffffff;
+  --input-bg: #ffffff;
+
+  /* High Contrast Badges */
+  --badge-blue-bg: #ffffff;
+  --badge-blue-text: #0000ff;
+  --badge-green-bg: #ffffff;
+  --badge-green-text: #008000;
+  --badge-purple-bg: #ffffff;
+  --badge-purple-text: #800080;
+  --badge-teal-bg: #ffffff;
+  --badge-teal-text: #008080;
+  --badge-orange-bg: #ffffff;
+  --badge-orange-text: #ff4500;
+}
+
+/* Dark Mode Theme */
+.theme-dark {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --text-primary: #ffffff;
+  --text-muted: #9ca3af;
+  --border-color: #3f3f46;
+  --primary-color: #38bdf8;
+  /* sky-400 */
+  --card-bg: #1e1e24;
+  --hero-bg: #0f172a;
+  /* slate-900 */
+  --input-bg: #1e293b;
+  /* slate-800 */
+
+  /* Dark Mode Badges */
+  --badge-blue-bg: #1e3a8a;
+  /* blue-900 */
+  --badge-blue-text: #bfdbfe;
+  /* blue-200 */
+  --badge-green-bg: #14532d;
+  /* green-900 */
+  --badge-green-text: #bbf7d0;
+  /* green-200 */
+  --badge-purple-bg: #4c1d95;
+  /* purple-900 */
+  --badge-purple-text: #e9d5ff;
+  /* purple-200 */
+  --badge-teal-bg: #134e4a;
+  /* teal-900 */
+  --badge-teal-text: #99f6e4;
+  /* teal-200 */
+  --badge-orange-bg: #7c2d12;
+  /* orange-900 */
+  --badge-orange-text: #fed7aa;
+  /* orange-200 */
+}
+
+/* Apply variables to body */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Base large text */
+.text-large body,
+.text-large p,
+.text-large span,
+.text-large a,
+.text-large button,
+.text-large input {
+  font-size: 110% !important;
+}
+
+.text-large h1 {
+  font-size: 3rem !important;
+}
+
+.text-large h2 {
+  font-size: 2.25rem !important;
+}
+
+.text-large h3 {
+  font-size: 1.75rem !important;
+}
+
+/* Global Focus Styles for Keyboard Accessibility */
+*:focus-visible {
+  outline: 3px solid var(--primary-color) !important;
+  outline-offset: 2px !important;
+}
+
+/* Specific override for search and location inputs to remove focus outline */
+#job-title-input:focus,
+#job-location-input:focus,
+#ai-job-title:focus,
+#ai-job-location:focus,
+#job-title-input:focus-visible,
+#job-location-input:focus-visible,
+#ai-job-title:focus-visible,
+#ai-job-location:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+@layer components {
+  .job-description p {
+    color: #000000a3;
+    margin-bottom: 20px;
+  }
+
+  .job-description h2,
+  .job-description h1,
+  .job-description h3,
+  .job-description h4,
+  .job-description h5,
+  .job-description h6 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    color: #364153;
+  }
+
+  .job-description ul li,
+  .job-description ol li {
+    margin-bottom: 8px;
+    list-style: decimal;
+    margin-left: 20px;
+    color: #000000a3;
+  }
+}
